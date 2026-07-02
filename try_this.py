@@ -1,24 +1,25 @@
+import os
+os.system("cls")
 devices = [
-    ("PLC1", "online"),
-    ("HMI1", "online"),
-    ("RTU2", "offline"),
-    ("SWITCH1", "online"),
-    ("RTU3", "offline"),
+    {"name" : "PLC1" , "location" : "PC17_CTB" , "status" : "online" , "ip" : "192.168.100.10"},
+    {"name" : "PLC2" , "location" : "PC17_WP1" , "status" : "online" , "ip" : "192.168.101.10"},
+    {"name" : "PLC3" , "location" : "PC17_WP2" , "status" : "online" , "ip" : "192.168.102.10"},
+    {"name" : "PLC4" , "location" : "PC17_WP3" , "status" : "offline" , "ip" : "192.168.103.10"},
+    {"name" : "HMI1" , "location" : "PC17_CTB" , "status" : "online" , "ip" : "192.168.100.11"},
+    {"name" : "HMI2" , "location" : "PC17_WP1" , "status" : "online" , "ip" : "192.168.101.2"},
+    {"name" : "HMI3" , "location" : "PC17_WP2" , "status" : "online" , "ip" : "192.168.102.2"},
+    {"name" : "HMI4" , "location" : "PC17_WP3" , "status" : "offline" , "ip" : "192.168.103.2"}
 ]
-print("What device do you want to know the status of?")
-user_input = input("")
-user_input = user_input.upper()
-found = False
-while not found:
-    for name, status in devices:
-        if name == user_input:
-            print(f"{name} is currently {status}. ")
-            found = True
-        else: 
-            name != user_input
-            continue
-    if found == False:
-        print("Sorry, that device was not found.")
-        user_input = input("Please try again")
-        user_input = user_input.upper()
-    
+offline_device = 0
+online_device = 0
+unknown_device = 0
+for device in devices:
+    if device['status'].lower() == 'offline':
+        print(f"{device['name']} : {device['location']} : {device['ip']} is Offline")
+        offline_device += 1
+    elif device['status'].lower() == 'online':
+        online_device += 1
+    else:
+        print(f"devices unknown/ not recorded: {unknown_device}")
+print(f"devices offline: {offline_device}" )
+print(f"devices online: {online_device}")
