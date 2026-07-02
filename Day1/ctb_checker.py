@@ -1,3 +1,4 @@
+
 import os
 devices = [
     ("PLC1", "online"),
@@ -16,7 +17,7 @@ print(f"you have {offline_count} devices offline. ")
 input("press enter to move on. ")
 os.system('cls')
 print("What device do you want to know the status of?")
-user_input = input(" ")
+user_input = input("")
 user_input = user_input.upper()
 found = False
 while not found:
@@ -31,4 +32,3 @@ while not found:
         print("Sorry, that device was not found.")
         user_input = input("Please try again")
         user_input = user_input.upper()
-    
