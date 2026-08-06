@@ -1,0 +1,15 @@
+Field_Tag,PLC_Tag,IO_Type,Description
+PIT-100,PT100,AI,Separator Inlet Pressure
+TIT-101,TT101,AI,Separator Inlet Temperature
+LIT-102,LT102,AI,Separator Oil Level
+FIT-103,FT103,AI,Gas Outlet Flow
+LS-110,LAHH110,DI,Separator High High Level Switch
+LS-111,LALL111,DI,Separator Low Low Level Switch
+PIT-200,PT200,AI,Sales Line Pressure
+TIT-201,TT201,AI,Wellhead Temperature
+XV-300,XV300,DO,ESD Valve Command
+XV-301,XV301,DO,Inlet Valve Command
+LS-401,LAHH401,DI,Tank High Level Switch
+FIT-402,FT402,AI,Water Flow Meter
+YI-500,Y500,DI,Emergency Shutdown Input
+AIT-501,AT501,AIH,H2S Detector
