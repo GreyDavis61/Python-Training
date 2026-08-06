@@ -1,0 +1,16 @@
+Field_Tag,PLC_Tag,IO_Type,Description,Status
+PIT-100,PT100,AI,Separator Inlet Pressure,Standard IO
+TIT-101,TT101,AI,Separator Inlet Temperature,Standard IO
+LIT-102,LT102,AI,Separator Oil Level,Standard IO
+FIT-103,FT103,AI,Gas Outlet Flow,Standard IO
+LS-110,LAHH110,DI,Separator High High Level Switch,Standard IO
+LS-111,LALL111,DI,Separator Low Low Level Switch,Standard IO
+PIT-200,PT200,AI,Sales Line Pressure,Standard IO
+TIT-201,TT201,AI,Wellhead Temperature,Standard IO
+XV-300,XV300,DO,ESD Valve Command,Standard IO
+XV-301,XV301,DO,Inlet Valve Command,Standard IO
+PIT-400,PT400,AI,Compressor Suction Pressure,Spare
+LS-401,LAHH401,DI,Tank High Level Switch,Standard IO
+FIT-402,FT402,AI,Water Flow Meter,Standard IO
+YI-500,Y500,DI,Emergency Shutdown Input,Standard IO
+AIT-501,AT501,AIH,H2S Detector,Standard IO
