@@ -25,11 +25,13 @@ clear_set()
 os.makedirs(os.path.join(script_dir, "PN_Outputs"), exist_ok=True)
 print(os.path.basename(csv_path))
 clear_set()
+
 #this will break the file name into two parts and  stores them to then print them out
 name, ext = os.path.splitext(csv_path)
 out_file = name + "_finished" + ext
 print(out_file)
 clear_set()
+
 #this will check to see if the fil or the directory exists or not (output is "true" or "false")
 if os.path.isfile(csv_path):
     print("This file exist! ")
@@ -41,6 +43,7 @@ else:
     print("This is not a directory! ")
 clear_set()
 
+#this changes the name of the FIle to something different
 print(os.path.basename(out_path))
 new_path = os.path.join(script_dir, "output_processed.csv")
 os.rename(out_path, new_path)
