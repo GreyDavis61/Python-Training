@@ -1,0 +1,78 @@
+import os
+import re
+import subprocess
+import socket
+os.system("cls")
+def clearset():
+    input("Press Enter to continue: ")
+    os.system("cls")
+    
+#allows me to check if the IP's port is working
+def check_port(ip, port):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.settimeout(1)
+    result = sock.connect_ex((ip, port))
+    sock.close()
+    if result == 0:
+        return True
+    else:
+        return False
+
+# created a funtion to allow me to ping another device on the network
+def pingdevice():
+    ip_address = input("What do you want to ping: ")
+    ping_cnt = input("How many times do you want to ping the device: ")
+    result = subprocess.run(
+        ["ping", "-n", ping_cnt, ip_address],
+        capture_output=True,
+        text=True
+    )
+    match = re.search(r"time=(\d+)ms", result.stdout)
+    if match:
+        ping_time = match.group(1)
+    else:
+        ping_time = "N/A"
+    if result.returncode == 0:
+        results = ("Device is: online!")
+    else:
+        results = ("Device is: offline or Error Found")
+        return (results, ping_time, None, None)
+    while True:
+        try:
+            print("What port would you like to check? (1, 502, 9999, na (if you don't want to check))")
+            port_num = input("Port Number: ")
+            if port_num.lower() not in ("na", "n/a"):
+                port_result = check_port(ip_address, int(port_num))
+                return (results, ping_time, port_result, port_num)
+            else:
+                return (results, ping_time, None, None)
+        except (ValueError, IndexError):
+            print("Please use a valid value.")
+
+
+
+while True:
+    try: 
+        #Logic start below
+        output, PingTime, port_results, port_num  = pingdevice()
+        os.system("cls")
+        print(output)
+        if PingTime == "N/A":
+            print("Ping Time: N/A")
+        else:
+            print(f"Ping Time: {PingTime} ms. ")
+
+        if port_results == True:
+            print(f"Port {port_num} is an active port!")
+        elif port_results == False:
+            print(f"Port {port_num} is not an active port!")
+
+
+        #Logic stop above
+        break
+    except KeyboardInterrupt:
+        os.system("cls")
+        print("User ended the script.")
+        result = input(str("want to continue? (y/n): "))
+        if result.lower() != "n":
+            break
