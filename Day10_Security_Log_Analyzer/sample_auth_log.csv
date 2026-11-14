@@ -1,0 +1,17 @@
+timestamp,event_type,username,source_ip,result,role,resource
+2026-09-06 07:55:00,login,jrivera,10.20.1.25,success,user,vpn
+2026-09-06 08:05:00,login,alex,203.0.113.50,failure,user,vpn
+2026-09-06 08:06:00,login,alex,203.0.113.50,failure,user,vpn
+2026-09-06 08:07:00,login,alex,203.0.113.50,failure,user,vpn
+2026-09-06 08:08:00,login,alex,203.0.113.50,failure,user,vpn
+2026-09-06 08:09:00,login,alex,203.0.113.50,failure,user,vpn
+2026-09-06 08:10:00,login,alex,203.0.113.50,success,user,vpn
+2026-09-06 08:30:00,login,mchen,10.20.1.31,failure,user,email
+2026-09-06 08:33:00,login,mchen,10.20.1.31,success,user,email
+2026-09-06 09:00:00,login,jrivera,198.51.100.77,failure,user,vpn
+2026-09-06 09:01:00,login,mchen,198.51.100.77,failure,user,vpn
+2026-09-06 09:02:00,login,ssingh,198.51.100.77,failure,user,vpn
+2026-09-06 09:03:00,login,tdavis,198.51.100.77,failure,user,vpn
+2026-09-06 09:15:00,login,secadmin,10.20.2.10,success,admin,domain_controller
+2026-09-06 09:20:00,login,contractor1,192.0.2.44,success,admin,domain_controller
+2026-09-06 10:05:00,logout,jrivera,10.20.1.25,success,user,vpn
